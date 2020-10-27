@@ -10909,6 +10909,8 @@ body {
 
 body .navbar {
   transition: 0.5s;
+  color: #16263D;
+  background-color: #fafafa;
 }
 
 body .nav-transparent {

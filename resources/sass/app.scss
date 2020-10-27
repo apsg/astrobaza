@@ -12,6 +12,8 @@ body {
 
     .navbar {
         transition: 0.5s;
+        color: $body-bg;
+        background-color: $color-primary;
     }
 
     .nav-transparent {
