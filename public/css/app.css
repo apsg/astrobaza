@@ -10911,3 +10911,7 @@ body .navbar {
   transition: 0.5s;
 }
 
+body .nav-transparent {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+

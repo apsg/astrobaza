@@ -41,8 +41,8 @@ $(document).ready(function () {
 
 $(window).on("scroll", function () {
     if ($(window).scrollTop()) {
-        $('#nav').removeClass('bg-transparent');
+        $('#nav').removeClass('nav-transparent');
     } else {
-        $('#nav').addClass('bg-transparent');
+        $('#nav').addClass('nav-transparent');
     }
 })
