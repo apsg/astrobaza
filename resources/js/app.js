@@ -19,7 +19,7 @@ window.Vue = require('vue');
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component('cover', require('./components/Cover.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -30,3 +30,19 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 const app = new Vue({
     el: '#app',
 });
+
+$(document).ready(function () {
+    $(".menu-icon").on("click", function () {
+        $("nav ul").toggleClass("showing");
+    });
+});
+
+// Scrolling Effect
+
+$(window).on("scroll", function () {
+    if ($(window).scrollTop()) {
+        $('#nav').removeClass('bg-transparent');
+    } else {
+        $('#nav').addClass('bg-transparent');
+    }
+})

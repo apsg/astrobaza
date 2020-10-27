@@ -1,5 +1,5 @@
 // Body
-$body-bg: #f8fafc;
+$body-bg: #16263D;
 
 // Typography
 $font-family-sans-serif: 'Nunito', sans-serif;
@@ -17,3 +17,11 @@ $yellow: #ffed4a;
 $green: #38c172;
 $teal: #4dc0b5;
 $cyan: #6cb2eb;
+
+
+@mixin gradient {
+    background-repeat: repeat-x;
+    background-image: -webkit-linear-gradient(45deg, #14a5d3, #20baa0);
+    background-image: linear-gradient(45deg, #14a5d3, #20baa0);
+    opacity: .85;
+}
