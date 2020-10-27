@@ -1,6 +1,6 @@
 <p align="center">
 <a href="https://astrobaza-swiecie.pl" target="_blank">
-<img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400">
+<img src="https://github.com/apsg/astrobaza/blob/main/public/images/logo_big.png?raw=true" width="400">
 </a>
 </p>
 
