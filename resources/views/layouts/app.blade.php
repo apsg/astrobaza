@@ -56,10 +56,17 @@
                         <a class="nav-link disabled" href="#">Disabled</a>
                     </li>
                 </ul>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form>
+                <div>
+                    @if(App::isLocale('pl'))
+                        <a href="{{ route('locale', 'en') }}">
+                            <img src="{{ asset('images/en.png') }}" height="20">
+                        </a>
+                    @else
+                        <a href="{{ route('locale', 'pl') }}">
+                            <img src="{{ asset('images/pl.png') }}" height="20">
+                        </a>
+                    @endif
+                </div>
             </div>
         </div>
     </div>

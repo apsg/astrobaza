@@ -8,7 +8,7 @@
                 <img src="{{ asset('images/logo_big_no_bg.png') }}">
                 <br />
 
-                <a href="{{ route('hours') }}" class="btn btn-secondary btn-lg mt-5">Zobacz godziny otwarcia</a>
+                <a href="{{ route('hours') }}" class="btn btn-secondary btn-lg mt-5">Zobacz godziny otwarcia {{ App::getLocale() }}</a>
             </div>
         </div>
     </cover>
