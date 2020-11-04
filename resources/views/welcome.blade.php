@@ -37,22 +37,34 @@
     <section>
         <div class="container">
             <h2 class="sub-gradient">Odkrywaj</h2>
-            <div class="d-flex mt-5">
-                <div class="mr-3 bg-light-blue p-4 text-center">
-                    <img src="{{ asset('images/planeta.svg') }}">
-                    <p class="mt-3 font-weight-bold">{{ _("Obserwacja gwiazd, planet i Słońca pod okiem edukatora") }}</p>
+            <div class="row row-cols-lg-4 row-cols-md-2 row-cols-sm-1 mt-5">
+                <div class="col p-1">
+                    <div
+                        class="bg-light-blue p-3 text-center h-100 d-flex flex-column justify-content-center align-items-center">
+                        <img src="{{ asset('images/planeta.svg') }}">
+                        <p class="mt-3 font-weight-bold">{{ _("Obserwacja gwiazd, planet i Słońca pod okiem edukatora") }}</p>
+                    </div>
                 </div>
-                <div class="mr-3 ml-3 bg-light-blue p-4 text-center">
-                    <img src="{{ asset('images/prezentacja.svg') }}">
-                    <p class="mt-3 font-weight-bold">{{ _("Porady i prezentacje dotyczące sprzętu astronomicznego") }}</p>
+                <div class="col p-1">
+                    <div
+                        class="bg-light-blue p-3 text-center h-100 d-flex flex-column justify-content-center align-items-center">
+                        <img src="{{ asset('images/prezentacja.svg') }}">
+                        <p class="mt-3 font-weight-bold">{{ _("Porady i prezentacje dotyczące sprzętu astronomicznego") }}</p>
+                    </div>
                 </div>
-                <div class="mr-3 ml-3 bg-light-blue p-4 text-center">
-                    <img src="{{ asset('images/teleskop.svg') }}">
-                    <p class="mt-3 font-weight-bold">{{ _("Praktyczna nauka obsługi sprzętu astronomicznego") }}</p>
+                <div class="col p-1">
+                    <div
+                        class="bg-light-blue p-3 text-center h-100 d-flex flex-column justify-content-center align-items-center">
+                        <img src="{{ asset('images/teleskop.svg') }}">
+                        <p class="mt-3 font-weight-bold">{{ _("Praktyczna nauka obsługi sprzętu astronomicznego") }}</p>
+                    </div>
                 </div>
-                <div class="ml-3 bg-light-blue p-4 text-center">
-                    <img src="{{ asset('images/rozmowa.svg') }}">
-                    <p class="mt-3 font-weight-bold">{{ _("Ciekawostki astronomiczne, pogadanki i prezentacja zdjęć") }}</p>
+                <div class="col p-1">
+                    <div
+                        class="bg-light-blue p-3 text-center h-100 d-flex flex-column justify-content-center align-items-center">
+                        <img src="{{ asset('images/rozmowa.svg') }}">
+                        <p class="mt-3 font-weight-bold">{{ _("Ciekawostki astronomiczne, pogadanki i prezentacja zdjęć") }}</p>
+                    </div>
                 </div>
             </div>
         </div>
