@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\LangController;
+use App\Http\Controllers\PagesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,5 +22,5 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/godziny', [App\Http\Controllers\HomeController::class, 'index'])->name('hours');
+Route::get('/godziny', [PagesController::class, 'hours'])->name('hours');
 Route::get('/lang/{lang}', LangController::class . '@change')->name('locale');

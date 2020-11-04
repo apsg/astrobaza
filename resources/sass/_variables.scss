@@ -6,6 +6,9 @@ $font-family-sans-serif: 'Nunito', sans-serif;
 $font-size-base: 0.9rem;
 $line-height-base: 1.6;
 
+$font-primary: 'Nunito', sans-serif;
+$font-secondary: 'Roboto', sans-serif;
+
 // Colors
 $blue: #3490dc;
 $indigo: #6574cd;
@@ -21,10 +24,20 @@ $cyan: #6cb2eb;
 $color-secondary: #9EB4CC;
 $color-primary: #fafafa;
 
+$color-light-blue: #233c5f;
+$color-gradient-left: #256EFF;
+$color-gradient-right: #3DDC97;
 
 @mixin gradient {
-    background-repeat: repeat-x;
-    background-image: -webkit-linear-gradient(45deg, #14a5d3, #20baa0);
-    background-image: linear-gradient(45deg, #14a5d3, #20baa0);
+    background-repeat: no-repeat;
+    background-image: -webkit-linear-gradient(45deg, $color-gradient-left, $color-gradient-right);
+    background-image: linear-gradient(45deg, $color-gradient-left, $color-gradient-right);
+    opacity: .85;
+}
+
+@mixin gradient-darker {
+    background-repeat: no-repeat;
+    background-image: -webkit-linear-gradient(45deg, darken($color-gradient-left, 10), darken($color-gradient-right, 10));
+    background-image: linear-gradient(45deg, darken($color-gradient-left, 10), darken($color-gradient-right, 10));
     opacity: .85;
 }

@@ -10,3 +10,10 @@ Non-commercial project to support local astrobase.
 
 See (soon) at: https://astrobaza-swiecie.pl
 
+
+### Components and resources used
+
+In random order
+
+- https://www.npmjs.com/package/vue-slick-carousel
+- https://unsplash.com

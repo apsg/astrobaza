@@ -20,6 +20,7 @@ window.Vue = require('vue');
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('cover', require('./components/Cover.vue').default);
+Vue.component('gallery', require('./components/Gallery.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -41,8 +42,12 @@ $(document).ready(function () {
 
 $(window).on("scroll", function () {
     if ($(window).scrollTop()) {
-        $('#nav').removeClass('nav-transparent');
+        $('#nav').removeClass('nav-transparent')
+            .removeClass('navbar-dark')
+            .addClass('navbar-light');
     } else {
-        $('#nav').addClass('nav-transparent');
+        $('#nav').addClass('nav-transparent')
+            .removeClass('navbar-light')
+            .addClass('navbar-dark');
     }
 })
