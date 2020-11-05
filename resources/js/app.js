@@ -21,7 +21,7 @@ window.Vue = require('vue');
 
 Vue.component('cover', require('./components/Cover.vue').default);
 Vue.component('gallery', require('./components/Gallery.vue').default);
-Vue.component('openings', require('./components/Opening.vue').default);
+Vue.component('openings', require('./components/Openings.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

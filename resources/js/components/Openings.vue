@@ -12,9 +12,19 @@
 
 <script>
 export default {
-    name: "Opening",
+    name: "Openings",
 
-    props: ['openings']
+    props: ['openings'],
+
+    data() {
+        return {
+            forecast: null,
+        }
+    },
+
+    methods: {
+
+    }
 }
 </script>
 
