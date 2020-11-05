@@ -79,9 +79,10 @@
 
     <section>
         <div class="container">
-            <h2 class="sub-gradient">Najnowsze zdjęcia</h2>
-            <gallery id="1"></gallery>
-            <gallery id="2"></gallery>
+            <h2 class="sub-gradient">{{ __("Najnowsze zdjęcia") }}</h2>
+            @foreach($galleries as $gallery)
+                <gallery id="{{ $gallery->id }}"></gallery>
+            @endforeach
         </div>
     </section>
 

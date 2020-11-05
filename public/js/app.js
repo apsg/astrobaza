@@ -1963,6 +1963,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -1973,15 +1976,18 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
+      visible: false,
+      index: 0,
       title: '',
       images: [],
+      description: '',
       settings: {
         "dots": true,
         "focusOnSelect": true,
         "infinite": true,
         "speed": 500,
-        "slidesToShow": 4,
-        "slidesToScroll": 4,
+        "slidesToShow": 3,
+        "slidesToScroll": 3,
         "touchThreshold": 5,
         "responsive": [{
           "breakpoint": 1024,
@@ -2007,6 +2013,24 @@ __webpack_require__.r(__webpack_exports__);
         }]
       }
     };
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    axios.get('/gallery/' + this.id).then(function (data) {
+      _this.title = data.data.gallery.title;
+      _this.description = data.data.gallery.description;
+      _this.images = data.data.images;
+    });
+  },
+  methods: {
+    showImg: function showImg(index) {
+      this.index = index;
+      this.visible = true;
+    },
+    handleHide: function handleHide() {
+      this.visible = false;
+    }
   }
 });
 
@@ -38418,23 +38442,27 @@ var render = function() {
   return _c(
     "div",
     [
-      _vm.images.length === 0 ? _c("div") : _vm._e(),
-      _vm._v(" "),
       _c("h3", [_vm._v(_vm._s(_vm.title))]),
       _vm._v(" "),
-      _c(
-        "VueSlickCarousel",
-        _vm._b({}, "VueSlickCarousel", _vm.settings, false),
-        [
-          _c("div", [_vm._v("1")]),
-          _vm._v(" "),
-          _c("div", [_vm._v("2")]),
-          _vm._v(" "),
-          _c("div", [_vm._v("3")]),
-          _vm._v(" "),
-          _c("div", [_vm._v("4")])
-        ]
-      )
+      _vm.description ? _c("p", [_vm._v(_vm._s(_vm.description))]) : _vm._e(),
+      _vm._v(" "),
+      _vm.images.length !== 0
+        ? _c(
+            "VueSlickCarousel",
+            _vm._b({}, "VueSlickCarousel", _vm.settings, false),
+            _vm._l(_vm.images, function(image) {
+              return _c("div", { staticClass: "p-1" }, [
+                _c("img", { staticClass: "w-100", attrs: { src: image.thumb } })
+              ])
+            }),
+            0
+          )
+        : _vm._e(),
+      _vm._v(" "),
+      _c("vue-easy-lightbox", {
+        attrs: { visible: _vm.visible, imgs: _vm.images, index: _vm.index },
+        on: { hide: _vm.handleHide }
+      })
     ],
     1
   )

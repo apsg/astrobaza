@@ -16,7 +16,7 @@
                         oraz dezynfekcję rąk. Limit osób odwiedzających astrobazę – 5.
                     </div>
                 </div>
-                <div class="pr-md-3 col-md-6 col-sm-12">
+                <div class="col-md-6 col-sm-12">
                     <div class="p-5 bg-light-blue">
                         <h2 class="sub-gradient">{{ __("Odwiedź Astrobazę w Świeciu") }}</h2>
                         <div class="row align-items-center">
@@ -50,13 +50,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-sm-12">
+                <div class="col-md-6 col-sm-12 mt-sm-2 mt-md-0">
                     <div class="p-5 bg-light-blue w-100">
-                        <h2 class="sub-gradient">{{ __("Aktualne dni i godziny otwarcia") }}</h2>
-                        <openings :openings="{{ $openings }}"></openings>
+                        <h2 class="sub-gradient mb-5">{{ __("Aktualne dni i godziny otwarcia") }}</h2>
+                        <openings :openings="{{ $openings }}" ></openings>
                     </div>
                 </div>
-                <div class="col-md-12 mt-3">
+                <div class="col-md-12 mt-4">
                     <iframe
                         class="w-100"
                         height="450"

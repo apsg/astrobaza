@@ -1,15 +1,18 @@
 <template>
     <div>
-        <div v-if="images.length === 0">
-
-        </div>
         <h3>{{ title }}</h3>
-        <VueSlickCarousel v-bind="settings">
-            <div>1</div>
-            <div>2</div>
-            <div>3</div>
-            <div>4</div>
+        <p v-if="description">{{ description }}</p>
+        <VueSlickCarousel v-bind="settings" v-if="images.length !== 0">
+            <div v-for="image in images" class="p-1">
+                <img class="w-100" :src="image.thumb"/>
+            </div>
         </VueSlickCarousel>
+        <vue-easy-lightbox
+            :visible="visible"
+            :imgs="images"
+            :index="index"
+            @hide="handleHide"
+        ></vue-easy-lightbox>
     </div>
 </template>
 
@@ -26,15 +29,18 @@ export default {
 
     data() {
         return {
+            visible: false,
+            index: 0,
             title: '',
             images: [],
+            description: '',
             settings: {
                 "dots": true,
                 "focusOnSelect": true,
                 "infinite": true,
                 "speed": 500,
-                "slidesToShow": 4,
-                "slidesToScroll": 4,
+                "slidesToShow": 3,
+                "slidesToScroll": 3,
                 "touchThreshold": 5,
                 "responsive": [
                     {
@@ -63,6 +69,26 @@ export default {
                     }
                 ]
             }
+        }
+    },
+
+    mounted() {
+        axios.get('/gallery/' + this.id)
+            .then(data => {
+                this.title = data.data.gallery.title;
+                this.description = data.data.gallery.description;
+                this.images = data.data.images;
+            })
+    },
+
+    methods: {
+        showImg(index) {
+            this.index = index
+            this.visible = true
+        },
+
+        handleHide() {
+            this.visible = false
         }
     }
 }
