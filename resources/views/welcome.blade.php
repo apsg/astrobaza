@@ -17,19 +17,26 @@
 
     <section>
         <div class="container">
-            <div class="d-flex align-items-center">
-                <div class="p-5">
-                    <h2 class="sub-gradient">Co to jest astrobaza?</h2>
+            <div class="row align-items-center">
+                <div class="col">
+                    <h2 class="sub-gradient">{{ __("Co to jest astrobaza?") }}</h2>
                     <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar euismod
                         amet duis et venenatis.
                         Amet, nunc placerat eget diam pellentesque lacus. Pulvinar eget at bibendum ornare nisi nunc.
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar euismod amet duis et
                         venenatis. Amet, nunc placerat eget diam pellentesque lacus. Pulvinar eget at bibendum ornare
                         nisi nunc.</p>
+
+                    <a href="https://kujawsko-pomorskie.travel/pl/astrobazy"
+                       target="_blank"
+                       class="btn btn-outline-astro">{{ __("Dowiedz się więcej o astrobazach") }}</a>
                 </div>
 
-                <img class="w-50" src="{{ asset('images/view.jpg') }}"/>
-
+                <div class="col">
+                    <gradient class="w-100" :opacity="0.5">
+                        <img class="w-100" src="{{ asset('images/view.jpg') }}"/>
+                    </gradient>
+                </div>
             </div>
         </div>
     </section>
@@ -41,28 +48,28 @@
                 <div class="col p-1">
                     <div
                         class="bg-light-blue p-3 text-center h-100 d-flex flex-column justify-content-center align-items-center">
-                        <img src="{{ asset('images/planeta.svg') }}">
+                        <img class="mt-3" src="{{ asset('images/planeta.svg') }}">
                         <p class="mt-3 font-weight-bold">{{ _("Obserwacja gwiazd, planet i Słońca pod okiem edukatora") }}</p>
                     </div>
                 </div>
                 <div class="col p-1">
                     <div
                         class="bg-light-blue p-3 text-center h-100 d-flex flex-column justify-content-center align-items-center">
-                        <img src="{{ asset('images/prezentacja.svg') }}">
+                        <img class="mt-3" src="{{ asset('images/prezentacja.svg') }}">
                         <p class="mt-3 font-weight-bold">{{ _("Porady i prezentacje dotyczące sprzętu astronomicznego") }}</p>
                     </div>
                 </div>
                 <div class="col p-1">
                     <div
                         class="bg-light-blue p-3 text-center h-100 d-flex flex-column justify-content-center align-items-center">
-                        <img src="{{ asset('images/teleskop.svg') }}">
+                        <img class="mt-3" src="{{ asset('images/teleskop.svg') }}">
                         <p class="mt-3 font-weight-bold">{{ _("Praktyczna nauka obsługi sprzętu astronomicznego") }}</p>
                     </div>
                 </div>
                 <div class="col p-1">
                     <div
                         class="bg-light-blue p-3 text-center h-100 d-flex flex-column justify-content-center align-items-center">
-                        <img src="{{ asset('images/rozmowa.svg') }}">
+                        <img class="mt-3" src="{{ asset('images/rozmowa.svg') }}">
                         <p class="mt-3 font-weight-bold">{{ _("Ciekawostki astronomiczne, pogadanki i prezentacja zdjęć") }}</p>
                     </div>
                 </div>

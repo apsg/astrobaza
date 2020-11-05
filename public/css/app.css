@@ -17239,6 +17239,19 @@ body {
   color: white;
 }
 
+.btn-outline-astro {
+  color: #6cb2eb;
+  border-color: #6cb2eb;
+}
+
+.btn-outline-astro:hover {
+  background-repeat: no-repeat;
+  background-image: linear-gradient(45deg, #256EFF, #3DDC97);
+  opacity: 0.85;
+  color: white;
+  border: 1px solid transparent;
+}
+
 body {
   font-family: "Roboto", sans-serif;
   background-color: #16263D;
@@ -17317,5 +17330,11 @@ p {
 
 .bg-light-blue {
   background-color: #233c5f;
+}
+
+.bg-gradient {
+  background-repeat: no-repeat;
+  background-image: linear-gradient(45deg, #256EFF, #3DDC97);
+  opacity: 0.85;
 }
 

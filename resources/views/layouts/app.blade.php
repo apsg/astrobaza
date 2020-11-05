@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>@yield('title', 'Astrobaza Świecie')</title>
+    <title>@yield('title', 'Astrobaza Świecie') | Astrobaza Świecie</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -22,9 +22,9 @@
 <body>
 <body>
 <header>
-    <div class="navbar navbar-expand-lg navbar-light shadow-sm fixed-top nav-transparent" id="nav">
+    <div class="navbar navbar-expand-lg navbar-dark shadow-sm fixed-top nav-transparent" id="nav">
         <div class="container">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="{{ url('/') }}">
                 <img src="{{ asset('images/logo_cb.png') }}" height="40"> {{ __("ASTROBAZA ŚWIECIE") }}
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"

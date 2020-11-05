@@ -29,6 +29,17 @@ html, body {
     }
 }
 
+.btn-outline-astro {
+    color: $cyan;
+    border-color: $cyan;
+
+    &:hover {
+        @include gradient;
+        color: white;
+        border: 1px solid transparent;
+    }
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     background-color: $body-bg;
@@ -48,7 +59,7 @@ body {
         padding-top: 100px;
     }
 
-    .bg-moon{
+    .bg-moon {
         background-image: url('/images/moon_sm.jpg');
         background-position: center center;
         background-size: cover;
@@ -103,6 +114,10 @@ p {
     }
 }
 
-.bg-light-blue{
+.bg-light-blue {
     background-color: $color-light-blue;
+}
+
+.bg-gradient {
+    @include gradient;
 }
