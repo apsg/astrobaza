@@ -6452,7 +6452,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".cover[data-v-485718dc] {\n  width: 100%;\n  height: 800px;\n  background-size: cover;\n}", ""]);
+exports.push([module.i, ".cover[data-v-485718dc] {\n  width: 100%;\n  height: 800px;\n  background-size: cover;\n  background-position: center center;\n}", ""]);
 
 // exports
 

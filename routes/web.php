@@ -23,4 +23,5 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/godziny', [PagesController::class, 'hours'])->name('hours');
+Route::get('/kontakt', [PagesController::class, 'contact'])->name('contact');
 Route::get('/lang/{lang}', LangController::class . '@change')->name('locale');

@@ -35,5 +35,6 @@ export default {
     width: 100%;
     height: 800px;
     background-size: cover;
+    background-position: center center;
 }
 </style>

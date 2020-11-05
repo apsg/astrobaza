@@ -25,7 +25,7 @@
     <div class="navbar navbar-expand-lg navbar-light shadow-sm fixed-top nav-transparent" id="nav">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="{{ asset('images/logo_cb.png') }}" height="40"> {{ _("ASTROBAZA ŚWIECIE") }}
+                <img src="{{ asset('images/logo_cb.png') }}" height="40"> {{ __("ASTROBAZA ŚWIECIE") }}
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,13 +35,13 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="{{ url('/') }}">{{ _("Strona główna") }} <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="{{ url('/') }}">{{ __("Strona główna") }} <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('galeria') }}">{{ _("Galeria") }}</a>
+                        <a class="nav-link" href="{{ url('galeria') }}">{{ __("Galeria") }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('kontakt') }}">{{ _("Kontakt") }}</a>
+                        <a class="nav-link" href="{{ url('kontakt') }}">{{ __("Kontakt") }}</a>
                     </li>
                 </ul>
                 <div>
@@ -66,14 +66,18 @@
 
 </main>
 
+<section class="text-center bg-moon p-lg-5 p-md-3">
+    <h2>{{ __("Zapraszamy do odwiedzin") }}</h2>
+    <p>{{ __("Odwiedziny w Astrobazie są całkowicie darmowe!") }}</p>
+    <a href="{{ route('contact') }}" class="btn btn-astro">{{ __("Zobacz godziny otwarcia") }}</a>
+</section>
+
 <footer class="text-muted">
     <div class="container">
         <p class="float-right">
-            <a href="#">Back to top</a>
+            <a href="#">{{ __("Wróć na górę") }}</a>
         </p>
-        <p>Album example is © Bootstrap, but please download and customize it for yourself!</p>
-        <p>New to Bootstrap? <a href="https://getbootstrap.com/">Visit the homepage</a> or read our <a
-                href="/docs/4.4/getting-started/introduction/">getting started guide</a>.</p>
+        <p>&copy; <a href="https://gackowski.edu.pl" target="_blank">Szymon Gackowski</a> dla Astrobazy Świecie</p>
     </div>
 </footer>
 

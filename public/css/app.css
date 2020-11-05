@@ -11115,6 +11115,12 @@ body .pt-nav {
   padding-top: 100px;
 }
 
+body .bg-moon {
+  background-image: url("/images/moon_sm.jpg");
+  background-position: center center;
+  background-size: cover;
+}
+
 section {
   margin-top: 50px;
   margin-bottom: 50px;
