@@ -1948,6 +1948,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_slick_carousel__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue_slick_carousel__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var vue_slick_carousel_dist_vue_slick_carousel_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-slick-carousel/dist/vue-slick-carousel.css */ "./node_modules/vue-slick-carousel/dist/vue-slick-carousel.css");
 /* harmony import */ var vue_slick_carousel_dist_vue_slick_carousel_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue_slick_carousel_dist_vue_slick_carousel_css__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../constants */ "./resources/js/constants.js");
 //
 //
 //
@@ -1966,11 +1967,22 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Gallery",
-  props: ['id'],
+  props: {
+    id: {
+      type: Number,
+      required: true
+    },
+    fancy: {
+      type: Boolean,
+      "default": false
+    }
+  },
   components: {
     VueSlickCarousel: vue_slick_carousel__WEBPACK_IMPORTED_MODULE_0___default.a
   },
@@ -1978,40 +1990,9 @@ __webpack_require__.r(__webpack_exports__);
     return {
       visible: false,
       index: 0,
-      title: '',
       images: [],
-      description: '',
-      settings: {
-        "dots": true,
-        "focusOnSelect": true,
-        "infinite": true,
-        "speed": 500,
-        "slidesToShow": 3,
-        "slidesToScroll": 3,
-        "touchThreshold": 5,
-        "responsive": [{
-          "breakpoint": 1024,
-          "settings": {
-            "slidesToShow": 3,
-            "slidesToScroll": 3,
-            "infinite": true,
-            "dots": true
-          }
-        }, {
-          "breakpoint": 600,
-          "settings": {
-            "slidesToShow": 2,
-            "slidesToScroll": 2,
-            "initialSlide": 2
-          }
-        }, {
-          "breakpoint": 480,
-          "settings": {
-            "slidesToShow": 1,
-            "slidesToScroll": 1
-          }
-        }]
-      }
+      gallery: null,
+      settings: _constants__WEBPACK_IMPORTED_MODULE_2__["gallerySettings"]
     };
   },
   mounted: function mounted() {
@@ -2020,6 +2001,8 @@ __webpack_require__.r(__webpack_exports__);
     axios.get('/gallery/' + this.id).then(function (data) {
       _this.title = data.data.gallery.title;
       _this.description = data.data.gallery.description;
+      _this.description = data.data.gallery.description;
+      _this.gallery = data.data.gallery;
       _this.images = data.data.images;
     });
   },
@@ -38442,9 +38425,29 @@ var render = function() {
   return _c(
     "div",
     [
-      _c("h3", [_vm._v(_vm._s(_vm.title))]),
+      _vm.gallery
+        ? _c(
+            "h3",
+            {
+              staticClass: "mt-3",
+              class: _vm.fancy ? "bg-gradient w-50 p-1" : ""
+            },
+            [
+              _vm._v("\n        " + _vm._s(_vm.gallery.title) + "\n        "),
+              _vm.fancy
+                ? _c("span", { staticClass: "float-right mr-3" }, [
+                    _vm._v(
+                      "\n            " + _vm._s(_vm.gallery.date) + "\n        "
+                    )
+                  ])
+                : _vm._e()
+            ]
+          )
+        : _vm._e(),
       _vm._v(" "),
-      _vm.description ? _c("p", [_vm._v(_vm._s(_vm.description))]) : _vm._e(),
+      _vm.gallery && _vm.gallery.description && _vm.fancy
+        ? _c("p", [_vm._v(_vm._s(_vm.gallery.description))])
+        : _vm._e(),
       _vm._v(" "),
       _vm.images.length !== 0
         ? _c(
@@ -38452,17 +38455,17 @@ var render = function() {
             _vm._b({}, "VueSlickCarousel", _vm.settings, false),
             _vm._l(_vm.images, function(image) {
               return _c("div", { staticClass: "p-1" }, [
-                _c("img", { staticClass: "w-100", attrs: { src: image.thumb } })
+                _c("a", { attrs: { href: image.url, target: "_blank" } }, [
+                  _c("img", {
+                    staticClass: "w-100",
+                    attrs: { src: image.thumb }
+                  })
+                ])
               ])
             }),
             0
           )
-        : _vm._e(),
-      _vm._v(" "),
-      _c("vue-easy-lightbox", {
-        attrs: { visible: _vm.visible, imgs: _vm.images, index: _vm.index },
-        on: { hide: _vm.handleHide }
-      })
+        : _vm._e()
     ],
     1
   )
@@ -62200,6 +62203,50 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Openings_vue_vue_type_template_id_91a433f4_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
+
+/***/ }),
+
+/***/ "./resources/js/constants.js":
+/*!***********************************!*\
+  !*** ./resources/js/constants.js ***!
+  \***********************************/
+/*! exports provided: gallerySettings */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "gallerySettings", function() { return gallerySettings; });
+var gallerySettings = {
+  "dots": false,
+  "focusOnSelect": true,
+  "infinite": true,
+  "speed": 500,
+  "slidesToShow": 3,
+  "slidesToScroll": 3,
+  "swipe": true,
+  "responsive": [{
+    "breakpoint": 1024,
+    "settings": {
+      "slidesToShow": 3,
+      "slidesToScroll": 3,
+      "infinite": true,
+      "dots": true
+    }
+  }, {
+    "breakpoint": 600,
+    "settings": {
+      "slidesToShow": 2,
+      "slidesToScroll": 2,
+      "initialSlide": 2
+    }
+  }, {
+    "breakpoint": 480,
+    "settings": {
+      "slidesToShow": 1,
+      "slidesToScroll": 1
+    }
+  }]
+};
 
 /***/ }),
 

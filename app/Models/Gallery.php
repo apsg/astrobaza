@@ -18,12 +18,18 @@ use Spatie\MediaLibrary\MediaCollections\Models\Media;
  * @property Carbon      created_at
  * @property Carbon      updated_at
  *
+ * @property-read string date
+ *
  * @method static Builder recent()
  */
 class Gallery extends Model implements HasMedia
 {
     use HasFactory;
     use InteractsWithMedia;
+
+    protected $appends = [
+        'date',
+    ];
 
     public function scopeRecent($query)
     {
@@ -35,5 +41,10 @@ class Gallery extends Model implements HasMedia
     {
         $this->addMediaConversion('thumb')
             ->fit(Manipulations::FIT_CROP, 523, 392);
+    }
+
+    public function getDateAttribute()
+    {
+        return $this->created_at->format('Y-m-d');
     }
 }
