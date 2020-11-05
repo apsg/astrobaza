@@ -1,6 +1,8 @@
 <?php
 namespace App\Http\Controllers;
 
+use App\Models\Opening;
+
 class PagesController
 {
     public function hours()
@@ -10,6 +12,8 @@ class PagesController
 
     public function contact()
     {
-        return view('contact');
+        $openings = Opening::future()->orderBy('date')->get();
+
+        return view('contact')->with(compact('openings'));
     }
 }

@@ -68,7 +68,7 @@
 
 <section class="text-center bg-moon p-lg-5 p-md-3">
     <h2>{{ __("Zapraszamy do odwiedzin") }}</h2>
-    <p>{{ __("Odwiedziny w Astrobazie są całkowicie darmowe!") }}</p>
+    <p class="font-weight-bold">{{ __("Odwiedziny w Astrobazie są całkowicie darmowe!") }}</p>
     <a href="{{ route('contact') }}" class="btn btn-astro">{{ __("Zobacz godziny otwarcia") }}</a>
 </section>
 
