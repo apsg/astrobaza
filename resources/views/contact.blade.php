@@ -61,7 +61,7 @@
                         class="w-100"
                         height="450"
                         frameborder="0" style="border:0"
-                        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyD3L0orfupf3Ox1HEjJNugEtI_9wEPAWiA
+                        src="https://www.google.com/maps/embed/v1/place?key={{ env('GOOGLE_API_KEY') }}
     &q=53.408018,18.445799" allowfullscreen>
                     </iframe>
                 </div>
