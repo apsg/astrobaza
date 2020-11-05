@@ -1,7 +1,9 @@
 <template>
     <div class="overlay-container">
         <slot></slot>
-        <div class="overlay bg-gradient" :style="style"></div>
+        <div class="overlay bg-gradient"
+             :class="inverse? 'overlay-inverse' : ''"
+             :style="style"></div>
     </div>
 </template>
 
@@ -17,6 +19,10 @@ export default {
         opacity: {
             type: Number,
             default: 0.85
+        },
+        inverse: {
+            type: Boolean,
+            default: false
         }
     },
 
@@ -43,6 +49,14 @@ export default {
 
         &:hover {
             opacity: 0 !important;
+        }
+    }
+
+    .overlay-inverse {
+        opacity: 0 !important;
+
+        &:hover {
+            opacity: 0.65 !important;
         }
     }
 }
