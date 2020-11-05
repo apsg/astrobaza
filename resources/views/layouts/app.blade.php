@@ -69,7 +69,9 @@
 <section class="text-center bg-moon p-lg-5 p-md-3 p-sm-3">
     <h2>{{ __("Zapraszamy do odwiedzin") }}</h2>
     <p class="font-weight-bold">{{ __("Odwiedziny w Astrobazie są całkowicie darmowe!") }}</p>
-    <a href="{{ route('contact') }}" class="btn btn-astro">{{ __("Zobacz godziny otwarcia") }}</a>
+    @if(!Request::is('kontakt'))
+        <a href="{{ route('contact') }}" class="btn btn-astro">{{ __("Zobacz godziny otwarcia") }}</a>
+    @endif
 </section>
 
 <footer class="text-muted">
