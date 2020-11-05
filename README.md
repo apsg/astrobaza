@@ -13,7 +13,11 @@ See (soon) at: https://astrobaza-swiecie.pl
 
 ### Components and resources used
 
-In random order
+Main technologies: PHP, Laravel, Vue 2, Bootstrap 4, npm, webpack, SCSS
 
-- https://www.npmjs.com/package/vue-slick-carousel
+Also, in order of use:
+
 - https://unsplash.com
+- https://www.npmjs.com/package/vue-slick-carousel
+- https://spatie.be/docs/laravel-medialibrary/v9/introduction
+- https://github.com/spatie/laravel-fractal

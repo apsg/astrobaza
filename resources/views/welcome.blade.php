@@ -8,9 +8,9 @@
                 <img src="{{ asset('images/logo_big_no_bg.png') }}">
                 <br/>
                 <div class="subtitle mt-3 text-white">Astronomia dla osób w każdym wieku</div>
-
-                <a href="{{ route('hours') }}" class="btn btn-astro btn-lg mt-5">Zobacz godziny
-                    otwarcia {{ App::getLocale() }}</a>
+                <a href="{{ route('contact') }}" class="btn btn-astro btn-lg mt-5">
+                    {{ __("Zobacz godziny otwarcia") }}
+                </a>
             </div>
         </div>
     </cover>
