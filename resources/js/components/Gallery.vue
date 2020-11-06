@@ -10,7 +10,9 @@
         <VueSlickCarousel v-bind="settings" v-if="images.length !== 0">
             <div v-for="image in images" class="p-1">
                 <a :href="image.url" target="_blank">
-                    <img class="w-100" :src="image.thumb"/>
+                    <gradient :opacity="0.6" :inverse="true">
+                        <img class="w-100" :src="image.thumb"/>
+                    </gradient>
                 </a>
             </div>
         </VueSlickCarousel>

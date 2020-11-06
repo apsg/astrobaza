@@ -10,7 +10,7 @@ class GalleryMediaTransformer extends TransformerAbstract
     {
         return [
             'thumb' => $media->getFullUrl('thumb'),
-            'url'   => $media->getFullUrl(),
+            'url'   => $media->getFullUrl('full'),
         ];
     }
 }

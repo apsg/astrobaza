@@ -1968,6 +1968,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 
 
@@ -2035,6 +2037,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Gradient",
   props: {
@@ -2045,6 +2049,10 @@ __webpack_require__.r(__webpack_exports__);
     opacity: {
       type: Number,
       "default": 0.85
+    },
+    inverse: {
+      type: Boolean,
+      "default": false
     }
   },
   computed: {
@@ -6549,7 +6557,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".overlay-container {\n  position: relative;\n}\n.overlay-container .overlay {\n  position: absolute;\n  z-index: 1000;\n  left: 0;\n  right: 0;\n  top: 0;\n  bottom: 0;\n  transition: 0.3s;\n}\n.overlay-container .overlay:hover {\n  opacity: 0 !important;\n}", ""]);
+exports.push([module.i, ".overlay-container {\n  position: relative;\n}\n.overlay-container .overlay {\n  position: absolute;\n  z-index: 1000;\n  left: 0;\n  right: 0;\n  top: 0;\n  bottom: 0;\n  transition: 0.3s;\n}\n.overlay-container .overlay:hover {\n  opacity: 0 !important;\n}\n.overlay-container .overlay-inverse {\n  opacity: 0 !important;\n}\n.overlay-container .overlay-inverse:hover {\n  opacity: 0.65 !important;\n}", ""]);
 
 // exports
 
@@ -38455,12 +38463,19 @@ var render = function() {
             _vm._b({}, "VueSlickCarousel", _vm.settings, false),
             _vm._l(_vm.images, function(image) {
               return _c("div", { staticClass: "p-1" }, [
-                _c("a", { attrs: { href: image.url, target: "_blank" } }, [
-                  _c("img", {
-                    staticClass: "w-100",
-                    attrs: { src: image.thumb }
-                  })
-                ])
+                _c(
+                  "a",
+                  { attrs: { href: image.url, target: "_blank" } },
+                  [
+                    _c("gradient", { attrs: { opacity: 0.6, inverse: true } }, [
+                      _c("img", {
+                        staticClass: "w-100",
+                        attrs: { src: image.thumb }
+                      })
+                    ])
+                  ],
+                  1
+                )
               ])
             }),
             0
@@ -38498,7 +38513,11 @@ var render = function() {
     [
       _vm._t("default"),
       _vm._v(" "),
-      _c("div", { staticClass: "overlay bg-gradient", style: _vm.style })
+      _c("div", {
+        staticClass: "overlay bg-gradient",
+        class: _vm.inverse ? "overlay-inverse" : "",
+        style: _vm.style
+      })
     ],
     2
   )

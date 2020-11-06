@@ -41,6 +41,9 @@ class Gallery extends Model implements HasMedia
     {
         $this->addMediaConversion('thumb')
             ->fit(Manipulations::FIT_CROP, 523, 392);
+        $this->addMediaConversion('full')
+            ->width(2000)
+            ->height(1600);
     }
 
     public function getDateAttribute()
