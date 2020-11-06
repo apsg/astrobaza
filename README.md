@@ -17,7 +17,8 @@ Main technologies: PHP, Laravel, Vue 2, Bootstrap 4, npm, webpack, SCSS
 
 Also, in order of use:
 
-- https://unsplash.com
-- https://www.npmjs.com/package/vue-slick-carousel
-- https://spatie.be/docs/laravel-medialibrary/v9/introduction
-- https://github.com/spatie/laravel-fractal
+- https://unsplash.com (media)
+- https://www.npmjs.com/package/vue-slick-carousel (image carousel)
+- https://spatie.be/docs/laravel-medialibrary/v9/introduction (media library and processing)
+- https://github.com/spatie/laravel-fractal (data transforms for APIs)
+- https://www.scaleway.com/en/ (S3-compatible data storage)
