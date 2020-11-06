@@ -1,7 +1,6 @@
 <?php
 namespace App\Http\Controllers;
 
-
 class OpeningHoursController extends Controller
 {
     public function getHours()

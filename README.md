@@ -22,3 +22,4 @@ Also, in order of use:
 - https://spatie.be/docs/laravel-medialibrary/v9/introduction (media library and processing)
 - https://github.com/spatie/laravel-fractal (data transforms for APIs)
 - https://www.scaleway.com/en/ (S3-compatible data storage)
+- https://openweathermap.org/api (weather forecast)
