@@ -79,7 +79,7 @@
         <p class="float-right">
             <a href="#">{{ __("Wróć na górę") }}</a>
         </p>
-        <p>&copy; <a href="https://gackowski.edu.pl" target="_blank">Szymon Gackowski</a> dla Astrobazy Świecie</p>
+        <p>&copy; <a href="https://gackowski.edu.pl" target="_blank">dr inż. Szymon Gackowski</a> dla Astrobazy Świecie</p>
     </div>
 </footer>
 

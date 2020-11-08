@@ -7,7 +7,7 @@
             <div>
                 <img src="{{ asset('images/logo_big_no_bg.png') }}">
                 <br/>
-                <div class="subtitle mt-3 text-white">Astronomia dla osób w każdym wieku</div>
+                <div class="subtitle mt-3 text-white">{{ __("Astronomia dla osób w każdym wieku") }}</div>
                 <a href="{{ route('contact') }}" class="btn btn-astro btn-lg mt-5">
                     {{ __("Zobacz godziny otwarcia") }}
                 </a>
@@ -49,28 +49,28 @@
                     <div
                         class="bg-light-blue p-3 text-center h-100 d-flex flex-column justify-content-center align-items-center">
                         <img class="mt-3" src="{{ asset('images/planeta.svg') }}">
-                        <p class="mt-3 font-weight-bold">{{ _("Obserwacja gwiazd, planet i Słońca pod okiem edukatora") }}</p>
+                        <p class="mt-3 font-weight-bold">{{ __("Obserwacja gwiazd, planet i Słońca pod okiem edukatora") }}</p>
                     </div>
                 </div>
                 <div class="col p-1">
                     <div
                         class="bg-light-blue p-3 text-center h-100 d-flex flex-column justify-content-center align-items-center">
                         <img class="mt-3" src="{{ asset('images/prezentacja.svg') }}">
-                        <p class="mt-3 font-weight-bold">{{ _("Porady i prezentacje dotyczące sprzętu astronomicznego") }}</p>
+                        <p class="mt-3 font-weight-bold">{{ __("Porady i prezentacje dotyczące sprzętu astronomicznego") }}</p>
                     </div>
                 </div>
                 <div class="col p-1">
                     <div
                         class="bg-light-blue p-3 text-center h-100 d-flex flex-column justify-content-center align-items-center">
                         <img class="mt-3" src="{{ asset('images/teleskop.svg') }}">
-                        <p class="mt-3 font-weight-bold">{{ _("Praktyczna nauka obsługi sprzętu astronomicznego") }}</p>
+                        <p class="mt-3 font-weight-bold">{{ __("Praktyczna nauka obsługi sprzętu astronomicznego") }}</p>
                     </div>
                 </div>
                 <div class="col p-1">
                     <div
                         class="bg-light-blue p-3 text-center h-100 d-flex flex-column justify-content-center align-items-center">
                         <img class="mt-3" src="{{ asset('images/rozmowa.svg') }}">
-                        <p class="mt-3 font-weight-bold">{{ _("Ciekawostki astronomiczne, pogadanki i prezentacja zdjęć") }}</p>
+                        <p class="mt-3 font-weight-bold">{{ __("Ciekawostki astronomiczne, pogadanki i prezentacja zdjęć") }}</p>
                     </div>
                 </div>
             </div>
