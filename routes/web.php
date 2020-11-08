@@ -32,6 +32,7 @@ Route::group(['prefix' => 'gallery'], function () {
 
 Route::group(['prefix' => 'openings'], function () {
     Route::post('/', OpeningHoursController::class . '@store')->name('openings.store');
+    Route::delete('/{opening}', OpeningHoursController::class . '@destroy')->name('openings.destroy');
 });
 
 Route::get('weather', WeatherController::class . '@getWeather');

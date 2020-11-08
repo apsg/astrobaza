@@ -48,18 +48,18 @@
                 <div class="col-md-6 col-sm-12 mt-sm-2 mt-md-0">
                     <div class="p-5 bg-light-blue w-100">
                         <h2 class="sub-gradient mb-5">{{ __("Aktualne dni i godziny otwarcia") }}</h2>
-                        <openings :openings="{{ $openings }}"></openings>
-                            <x-add-opening/>
+                        <openings :openings="{{ $openings }}" @auth() :admin="true" @endauth></openings>
+                        <x-add-opening/>
                     </div>
                 </div>
                 <div class="col-md-12 mt-4">
-{{--                    <iframe--}}
-{{--                        class="w-100"--}}
-{{--                        height="450"--}}
-{{--                        frameborder="0" style="border:0"--}}
-{{--                        src="https://www.google.com/maps/embed/v1/place?key={{ env('GOOGLE_API_KEY') }}--}}
-{{--                            &q=Astrobaza Świecie" allowfullscreen>--}}
-{{--                    </iframe>--}}
+                    <iframe
+                        class="w-100"
+                        height="450"
+                        frameborder="0" style="border:0"
+                        src="https://www.google.com/maps/embed/v1/place?key={{ env('GOOGLE_API_KEY') }}
+                            &q=Astrobaza Świecie" allowfullscreen>
+                    </iframe>
                 </div>
             </div>
         </div>

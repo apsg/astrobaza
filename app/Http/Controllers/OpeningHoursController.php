@@ -12,4 +12,11 @@ class OpeningHoursController extends Controller
 
         return back();
     }
+
+    public function destroy(Opening $opening)
+    {
+        $opening->delete();
+
+        return response()->json([], 200);
+    }
 }

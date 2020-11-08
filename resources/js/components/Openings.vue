@@ -7,10 +7,18 @@
             <div class="flex-fill text-center">
                 -
             </div>
-            <div><i class="fa fa-clock"></i> <span>{{ opening.from }}</span>-<span>{{ opening.to }}</span></div>
+            <div>
+                <i class="fa fa-clock "></i> <span>{{ opening.from }}</span>-<span>{{ opening.to }}</span>
+                <a v-if="admin"
+                   class="btn btn-outline-danger btn-sm"
+                   @click.prevent="remove(opening.id)"
+                >
+                    <i class="fa fa-trash"></i>
+                </a>
+            </div>
         </div>
         <p class="alert alert-info">
-            <i class="fa fa-info"></i> Najedź na datę by zobaczyć prognozę pogody. Prognoza pogody dostępna na
+            <i class="fa fa-info mr-3"></i> Najedź kursorem na datę by zobaczyć prognozę pogody. Prognoza pogody dostępna na
             najbliższe 7 dni.
         </p>
         <div v-if="current" class="forecast bg-light-blue shadow-sm p-3 rounded border border-white"
@@ -28,12 +36,19 @@
 </template>
 
 <script>
-import moment from 'moment'
-
 export default {
     name: "Openings",
 
-    props: ['openings'],
+    props: {
+        openings: {
+            type: Array,
+            required: true,
+        },
+        admin: {
+            type: Boolean,
+            default: false
+        }
+    },
 
     data() {
         return {
@@ -69,6 +84,12 @@ export default {
 
         hide() {
             this.current = null;
+        },
+
+        remove(id) {
+            axios.delete('/openings/' + id).then(() => {
+                location.reload();
+            });
         }
     },
 
@@ -84,7 +105,7 @@ export default {
 .openings {
     position: relative;
 
-    & > * {
+    & > div {
         cursor: pointer;
     }
 
