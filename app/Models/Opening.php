@@ -5,6 +5,7 @@ namespace App\Models;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\App;
 
 /**
  * @property int    id
@@ -30,6 +31,7 @@ class Opening extends Model
 
     protected $appends = [
         'date_formatted',
+        'day',
     ];
 
     public function scopeFuture($query)
@@ -50,5 +52,10 @@ class Opening extends Model
     public function getToAttribute()
     {
         return substr($this->attributes['to'], 0, -3);
+    }
+
+    public function getDayAttribute()
+    {
+        return $this->date->locale(App::getLocale())->dayName;
     }
 }

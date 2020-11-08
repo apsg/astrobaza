@@ -3,14 +3,19 @@
         <div class="d-flex pb-3" v-for="opening in openings"
              @mouseenter="show(opening.date_formatted, $event)"
              @mouseleave="hide">
-            <div>{{ opening.date_formatted }}</div>
+            <div><i class="fa fa-calendar-day"></i> {{ opening.date_formatted }} ({{ opening.day }})</div>
             <div class="flex-fill text-center">
                 -
             </div>
-            <div>godziny: <span>{{ opening.from }}</span>-<span>{{ opening.to }}</span></div>
+            <div><i class="fa fa-clock"></i> <span>{{ opening.from }}</span>-<span>{{ opening.to }}</span></div>
         </div>
-        <div v-if="current" class="forecast bg-light-blue shadow-sm p-3" :style="forecastStyle">
-            <h3>Prognoza pogody: </h3>
+        <p class="alert alert-info">
+            <i class="fa fa-info"></i> Najedź na datę by zobaczyć prognozę pogody. Prognoza pogody dostępna na
+            najbliższe 7 dni.
+        </p>
+        <div v-if="current" class="forecast bg-light-blue shadow-sm p-3 rounded border border-white"
+             :style="forecastStyle">
+            <h3>Prognoza pogody na {{ current.date }}: </h3>
             Zachód słońca: {{ current.sunset }} <br/>
             Temperatura: {{ current.temp }}&deg;C <br/>
             Zachmurzenie: {{ current.clouds }}% <br/>
@@ -54,10 +59,8 @@ export default {
         },
 
         show(date, e) {
-            console.log(e);
-
             this.position.x = e.layerX;
-            this.position.y = e.layerY;
+            this.position.y = e.layerY + 10;
 
             this.current = this.forecasts.find(obj => {
                 return obj.date === date;
@@ -65,7 +68,6 @@ export default {
         },
 
         hide() {
-            console.log('mouseleave');
             this.current = null;
         }
     },
@@ -82,7 +84,7 @@ export default {
 .openings {
     position: relative;
 
-    & > *{
+    & > * {
         cursor: pointer;
     }
 

@@ -2099,6 +2099,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Openings",
@@ -2125,15 +2130,13 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     show: function show(date, e) {
-      console.log(e);
       this.position.x = e.layerX;
-      this.position.y = e.layerY;
+      this.position.y = e.layerY + 10;
       this.current = this.forecasts.find(function (obj) {
         return obj.date === date;
       });
     },
     hide: function hide() {
-      console.log('mouseleave');
       this.current = null;
     }
   },
@@ -60229,14 +60232,24 @@ var render = function() {
             }
           },
           [
-            _c("div", [_vm._v(_vm._s(opening.date_formatted))]),
+            _c("div", [
+              _c("i", { staticClass: "fa fa-calendar-day" }),
+              _vm._v(
+                " " +
+                  _vm._s(opening.date_formatted) +
+                  " (" +
+                  _vm._s(opening.day) +
+                  ")"
+              )
+            ]),
             _vm._v(" "),
             _c("div", { staticClass: "flex-fill text-center" }, [
               _vm._v("\n            -\n        ")
             ]),
             _vm._v(" "),
             _c("div", [
-              _vm._v("godziny: "),
+              _c("i", { staticClass: "fa fa-clock" }),
+              _vm._v(" "),
               _c("span", [_vm._v(_vm._s(opening.from))]),
               _vm._v("-"),
               _c("span", [_vm._v(_vm._s(opening.to))])
@@ -60245,15 +60258,20 @@ var render = function() {
         )
       }),
       _vm._v(" "),
+      _vm._m(0),
+      _vm._v(" "),
       _vm.current
         ? _c(
             "div",
             {
-              staticClass: "forecast bg-light-blue shadow-sm p-3",
+              staticClass:
+                "forecast bg-light-blue shadow-sm p-3 rounded border border-white",
               style: _vm.forecastStyle
             },
             [
-              _c("h3", [_vm._v("Prognoza pogody: ")]),
+              _c("h3", [
+                _vm._v("Prognoza pogody na " + _vm._s(_vm.current.date) + ": ")
+              ]),
               _vm._v(
                 "\n        Zachód słońca: " + _vm._s(_vm.current.sunset) + " "
               ),
@@ -60284,7 +60302,19 @@ var render = function() {
     2
   )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", { staticClass: "alert alert-info" }, [
+      _c("i", { staticClass: "fa fa-info" }),
+      _vm._v(
+        " Najedź na datę by zobaczyć prognozę pogody. Prognoza pogody dostępna na\n        najbliższe 7 dni.\n    "
+      )
+    ])
+  }
+]
 render._withStripped = true
 
 

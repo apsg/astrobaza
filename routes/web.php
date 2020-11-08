@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\LangController;
+use App\Http\Controllers\OpeningHoursController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\WeatherController;
 use Illuminate\Support\Facades\Route;
@@ -27,6 +28,10 @@ Route::get('/lang/{lang}', LangController::class . '@change')->name('locale');
 
 Route::group(['prefix' => 'gallery'], function () {
     Route::get('/{gallery}', GalleryController::class . '@show');
+});
+
+Route::group(['prefix' => 'openings'], function () {
+    Route::post('/', OpeningHoursController::class . '@store')->name('openings.store');
 });
 
 Route::get('weather', WeatherController::class . '@getWeather');
