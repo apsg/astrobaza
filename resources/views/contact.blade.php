@@ -19,7 +19,7 @@
                                 <i class="fa fa-2x fa-map-marker-alt"></i>
                             </div>
                             <div class="col py-3">
-                                Zlokalizowane na terenie<br/>
+                                {{ __("Zlokalizowane na terenie") }}<br/>
                                 I Liceum Ogólnokształcace im. Floriana Ceynowy.<br/>
                                 ul. Gimnazjalna 3, 86-100 Świecie
                             </div>
