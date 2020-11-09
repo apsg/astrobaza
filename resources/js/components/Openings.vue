@@ -1,5 +1,9 @@
 <template>
     <div class="openings">
+        <p class="alert alert-info">
+            <i class="fa fa-info mr-3"></i> Najedź kursorem na datę by zobaczyć prognozę pogody. Prognoza pogody dostępna na
+            najbliższe 7 dni.
+        </p>
         <div class="d-flex pb-3" v-for="opening in openings"
              @mouseenter="show(opening.date_formatted, $event)"
              @mouseleave="hide">
@@ -17,10 +21,6 @@
                 </a>
             </div>
         </div>
-        <p class="alert alert-info">
-            <i class="fa fa-info mr-3"></i> Najedź kursorem na datę by zobaczyć prognozę pogody. Prognoza pogody dostępna na
-            najbliższe 7 dni.
-        </p>
         <div v-if="current" class="forecast bg-light-blue shadow-sm p-3 rounded border border-white"
              :style="forecastStyle">
             <h3>Prognoza pogody na {{ current.date }}: </h3>

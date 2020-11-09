@@ -38930,6 +38930,8 @@ var render = function() {
     "div",
     { staticClass: "openings" },
     [
+      _vm._m(0),
+      _vm._v(" "),
       _vm._l(_vm.openings, function(opening) {
         return _c(
           "div",
@@ -38984,8 +38986,6 @@ var render = function() {
           ]
         )
       }),
-      _vm._v(" "),
-      _vm._m(0),
       _vm._v(" "),
       _vm.current
         ? _c(
