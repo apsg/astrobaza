@@ -23,6 +23,7 @@ Vue.component('cover', require('./components/Cover.vue').default);
 Vue.component('gallery', require('./components/Gallery.vue').default);
 Vue.component('openings', require('./components/Openings.vue').default);
 Vue.component('gradient', require('./components/Gradient.vue').default);
+Vue.component('edit-gallery', require('./components/EditGallery.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -32,6 +33,13 @@ Vue.component('gradient', require('./components/Gradient.vue').default);
 
 const app = new Vue({
     el: '#app',
+
+    methods: {
+        editGallery(id) {
+            this.$refs.edit.loadGallery(id);
+            $("#galleryModal").modal('show');
+        }
+    }
 });
 
 $(document).ready(function () {

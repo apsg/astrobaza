@@ -27,6 +27,11 @@ class Gallery extends Model implements HasMedia
     use HasFactory;
     use InteractsWithMedia;
 
+    protected $fillable = [
+        'title',
+        'description',
+    ];
+
     protected $appends = [
         'date',
     ];

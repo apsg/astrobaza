@@ -8,6 +8,8 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 @import "~vue-slick-carousel/src/slick-theme.css";
+@import "~vue2-dropzone/dist/vue2Dropzone.min.css";
+
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
 @import '~@fortawesome/fontawesome-free/scss/regular';
 @import '~@fortawesome/fontawesome-free/scss/solid';
@@ -121,4 +123,8 @@ p {
 
 .bg-gradient {
     @include gradient;
+}
+
+.text-black{
+    color: #000000;
 }

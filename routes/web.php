@@ -26,8 +26,16 @@ Route::get('/kontakt', PagesController::class . '@contact')->name('contact');
 Route::get('/galeria', PagesController::class . '@gallery')->name('gallery');
 Route::get('/lang/{lang}', LangController::class . '@change')->name('locale');
 
-Route::group(['prefix' => 'gallery'], function () {
-    Route::get('/{gallery}', GalleryController::class . '@show');
+Route::get('/gallery/{gallery}', GalleryController::class . '@show')->name('gallery.show');
+
+Route::group(['prefix' => 'gallery', 'middleware' => 'auth'], function () {
+    Route::post('/', GalleryController::class . '@store')->name('gallery.store');
+    Route::post('/{gallery}', GalleryController::class . '@update')->name('gallery.update');
+    Route::delete('/{gallery}', GalleryController::class . '@destroy')->name('gallery.delete');
+    Route::post('/{gallery}/images', GalleryController::class . '@uploadImages')
+        ->name('gallery.images.store');
+    Route::delete('/{gallery}/images/{uuid}', GalleryController::class . '@deleteImage')
+        ->name('gallery.images.destroy');
 });
 
 Route::group(['prefix' => 'openings'], function () {

@@ -45,6 +45,15 @@
                     </li>
                 </ul>
                 <div>
+                    @auth()
+                        <div class="d-inline-block">
+                            <form action="{{ route('logout') }}" method="post">
+                                @csrf
+                                <button>Wyloguj</button>
+                            </form>
+                        </div>
+                    @endauth
+
                     @if(App::isLocale('pl'))
                         <a href="{{ route('locale', 'en') }}">
                             <img src="{{ asset('images/en.png') }}" height="20">
@@ -79,7 +88,8 @@
         <p class="float-right">
             <a href="#">{{ __("Wróć na górę") }}</a>
         </p>
-        <p>&copy; <a href="https://gackowski.edu.pl" target="_blank">dr inż. Szymon Gackowski</a> dla Astrobazy Świecie</p>
+        <p>&copy; <a href="https://gackowski.edu.pl" target="_blank">dr inż. Szymon Gackowski</a> dla Astrobazy Świecie
+        </p>
     </div>
 </footer>
 
