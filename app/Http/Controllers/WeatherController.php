@@ -15,10 +15,6 @@ class WeatherController
             . "&lat=53.408018&lon=18.445799&exclude=current,minutely,hourly,alerts&units=metric&lang=pl");
 //        });
 
-        \Log::info(__FUNCTION__, [
-            "r" => $result,
-        ]);
-
         return fractal($result['daily'], new WeatherTransformer())->toArray();
     }
 }

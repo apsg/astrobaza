@@ -48,6 +48,7 @@
                 <div class="col-md-6 col-sm-12 mt-sm-2 mt-md-0">
                     <div class="p-5 bg-light-blue w-100">
                         <h2 class="sub-gradient mb-5">{{ __("Aktualne dni i godziny otwarcia") }}</h2>
+                        <p>{{ __("Odwiedziny w astrobazie są całkowicie darmowe") }}</p>
                         <openings :openings="{{ $openings }}" @auth() :admin="true" @endauth></openings>
                         @auth()
                             <x-add-opening/>
