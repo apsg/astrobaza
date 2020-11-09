@@ -83,6 +83,12 @@
             @foreach($galleries as $gallery)
                 <gallery :id="{{ $gallery->id }}"></gallery>
             @endforeach
+
+            <div class="text-center my-5">
+                <a href="{{ route('gallery') }}" class="btn btn-astro">
+                    {{ __("Odwiedź galerię") }}
+                </a>
+            </div>
         </div>
     </section>
 

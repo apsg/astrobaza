@@ -49,7 +49,7 @@
                         <div class="d-inline-block">
                             <form action="{{ route('logout') }}" method="post">
                                 @csrf
-                                <button>Wyloguj</button>
+                                <button class="btn btn-sm btn-outline-secondary mr-3">Wyloguj</button>
                             </form>
                         </div>
                     @endauth
