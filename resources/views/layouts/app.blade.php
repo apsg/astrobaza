@@ -33,14 +33,15 @@
             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
+                <div class="mr-auto"></div>
+                <ul class="navbar-nav">
+                    <li class="nav-item px-2 active">
                         <a class="nav-link" href="{{ url('/') }}">{{ __("Strona główna") }} <span class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item px-2">
                         <a class="nav-link" href="{{ url('galeria') }}">{{ __("Galeria") }}</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item px-2">
                         <a class="nav-link" href="{{ url('kontakt') }}">{{ __("Kontakt") }}</a>
                     </li>
                 </ul>
