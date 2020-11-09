@@ -10,8 +10,10 @@ class GalleryController extends Controller
 {
     public function show(Gallery $gallery)
     {
-        $images = fractal($gallery->getMedia('images'), new GalleryMediaTransformer())
-            ->toArray()['data'];
+        $images = fractal(
+            $gallery->getMedia('images'),
+            new GalleryMediaTransformer()
+        )->toArray()['data'];
 
         return compact('gallery', 'images');
     }

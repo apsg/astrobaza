@@ -11,6 +11,7 @@ class GalleryMediaTransformer extends TransformerAbstract
         return [
             'thumb' => $media->getFullUrl('thumb'),
             'url'   => $media->getFullUrl('full'),
+            'uuid'  => $media->uuid,
         ];
     }
 }

@@ -23,3 +23,4 @@ Also, in order of use:
 - https://github.com/spatie/laravel-fractal (data transforms for APIs)
 - https://www.scaleway.com/en/ (S3-compatible data storage)
 - https://openweathermap.org/api (weather forecast)
+- https://github.com/rowanwins/vue-dropzone/ (dropzone for file uploads)

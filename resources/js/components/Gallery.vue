@@ -12,6 +12,9 @@
                 <a :href="image.url" target="_blank">
                     <gradient :opacity="0.6" :inverse="true">
                         <img class="w-100" :src="image.thumb"/>
+                        <button class="btn btn-sm btn-outline-danger remove" @click.prevent="remove(image)">
+                            <i class="fa fa-trash"></i>
+                        </button>
                     </gradient>
                 </a>
             </div>
@@ -33,6 +36,10 @@ export default {
             required: true
         },
         fancy: {
+            type: Boolean,
+            default: false
+        },
+        admin: {
             type: Boolean,
             default: false
         }
@@ -69,11 +76,25 @@ export default {
 
         handleHide() {
             this.visible = false
+        },
+
+        remove(image) {
+            axios.delete('/gallery/' + this.id + '/images/' + image.uuid)
+                .then(() => {
+                    this.images = this.images.filter(img => {
+                        return img.uuid !== image.uuid;
+                    });
+                });
         }
     }
 }
 </script>
 
-<style scoped>
-
+<style lang="scss" scoped>
+.remove {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    z-index: 2000;
+}
 </style>
