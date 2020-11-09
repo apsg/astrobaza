@@ -49,7 +49,9 @@
                     <div class="p-5 bg-light-blue w-100">
                         <h2 class="sub-gradient mb-5">{{ __("Aktualne dni i godziny otwarcia") }}</h2>
                         <openings :openings="{{ $openings }}" @auth() :admin="true" @endauth></openings>
-                        <x-add-opening/>
+                        @auth()
+                            <x-add-opening/>
+                        @endauth
                     </div>
                 </div>
                 <div class="col-md-12 mt-4">
