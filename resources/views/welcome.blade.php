@@ -43,7 +43,7 @@
 
     <section>
         <div class="container">
-            <h2 class="sub-gradient">Odkrywaj</h2>
+            <h2 class="sub-gradient">{{ __("Odkrywaj") }}</h2>
             <div class="row row-cols-lg-4 row-cols-md-2 row-cols-sm-1 mt-5">
                 <div class="col p-1">
                     <div

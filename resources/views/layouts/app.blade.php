@@ -76,7 +76,7 @@
 
 </main>
 
-<section class="text-center bg-moon p-lg-5 p-md-3 p-sm-3">
+<section class="text-center bg-moon p-lg-5 p-md-3 p-sm-3 p-2">
     <h2>{{ __("Zapraszamy do odwiedzin") }}</h2>
     <p class="font-weight-bold">{{ __("Odwiedziny w Astrobazie są całkowicie darmowe!") }}</p>
     @if(!Request::is('kontakt'))
@@ -93,7 +93,6 @@
         </p>
     </div>
 </footer>
-
 
 </body>
 </body>
