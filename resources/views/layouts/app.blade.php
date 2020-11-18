@@ -25,7 +25,8 @@
     <div class="navbar navbar-expand-lg navbar-dark shadow-sm fixed-top nav-transparent" id="nav">
         <div class="container">
             <a class="navbar-brand" href="{{ url('/') }}">
-                <img src="{{ asset('images/logo_cb.png') }}" height="40" alt="logo"> {{ __("ASTROBAZA ŚWIECIE") }}
+                <img src="{{ asset('images/logo_cb.png') }}" height="40"
+                     alt="Main navbar logo"> {{ __("ASTROBAZA ŚWIECIE") }}
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -71,6 +72,7 @@
 </header>
 
 <main role="main" id="app">
+    <h1 class="hide">@yield('title')</h1>
 
     @yield('content')
 
