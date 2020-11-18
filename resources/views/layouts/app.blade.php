@@ -25,7 +25,7 @@
     <div class="navbar navbar-expand-lg navbar-dark shadow-sm fixed-top nav-transparent" id="nav">
         <div class="container">
             <a class="navbar-brand" href="{{ url('/') }}">
-                <img src="{{ asset('images/logo_cb.png') }}" height="40"> {{ __("ASTROBAZA ŚWIECIE") }}
+                <img src="{{ asset('images/logo_cb.png') }}" height="40" alt="logo"> {{ __("ASTROBAZA ŚWIECIE") }}
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -57,11 +57,11 @@
 
                     @if(App::isLocale('pl'))
                         <a href="{{ route('locale', 'en') }}">
-                            <img src="{{ asset('images/en.png') }}" height="20">
+                            <img alt="lang-en" src="{{ asset('images/en.png') }}" height="20">
                         </a>
                     @else
                         <a href="{{ route('locale', 'pl') }}">
-                            <img src="{{ asset('images/pl.png') }}" height="20">
+                            <img alt="lang-pl" src="{{ asset('images/pl.png') }}" height="20">
                         </a>
                     @endif
                 </div>

@@ -5,7 +5,7 @@
     <cover img="{{ asset('images/moon.jpg') }}">
         <div class="text-center h-100 d-flex flex-column justify-content-center">
             <div>
-                <img src="{{ asset('images/logo_big_no_bg.png') }}">
+                <img alt="Big logo" src="{{ asset('images/logo_big_no_bg.png') }}">
                 <br/>
                 <div class="subtitle mt-3 text-white">{{ __("Astronomia dla osób w każdym wieku") }}</div>
                 <a href="{{ route('contact') }}" class="btn btn-astro btn-lg mt-5">
@@ -34,7 +34,7 @@
 
                 <div class="col">
                     <gradient class="w-100" :opacity="0.5">
-                        <img class="w-100" src="{{ asset('images/view.jpg') }}"/>
+                        <img alt="Astrobase view" class="w-100" src="{{ asset('images/view.jpg') }}"/>
                     </gradient>
                 </div>
             </div>
@@ -48,28 +48,28 @@
                 <div class="col p-1">
                     <div
                         class="bg-light-blue p-3 text-center h-100 d-flex flex-column justify-content-center align-items-center">
-                        <img class="mt-3" src="{{ asset('images/planeta.svg') }}">
+                        <img alt="planet" class="mt-3" src="{{ asset('images/planeta.svg') }}">
                         <p class="mt-3 font-weight-bold">{{ __("Obserwacja gwiazd, planet i Słońca pod okiem edukatora") }}</p>
                     </div>
                 </div>
                 <div class="col p-1">
                     <div
                         class="bg-light-blue p-3 text-center h-100 d-flex flex-column justify-content-center align-items-center">
-                        <img class="mt-3" src="{{ asset('images/prezentacja.svg') }}">
+                        <img alt="presentation" class="mt-3" src="{{ asset('images/prezentacja.svg') }}">
                         <p class="mt-3 font-weight-bold">{{ __("Porady i prezentacje dotyczące sprzętu astronomicznego") }}</p>
                     </div>
                 </div>
                 <div class="col p-1">
                     <div
                         class="bg-light-blue p-3 text-center h-100 d-flex flex-column justify-content-center align-items-center">
-                        <img class="mt-3" src="{{ asset('images/teleskop.svg') }}">
+                        <img alt="telescope" class="mt-3" src="{{ asset('images/teleskop.svg') }}">
                         <p class="mt-3 font-weight-bold">{{ __("Praktyczna nauka obsługi sprzętu astronomicznego") }}</p>
                     </div>
                 </div>
                 <div class="col p-1">
                     <div
                         class="bg-light-blue p-3 text-center h-100 d-flex flex-column justify-content-center align-items-center">
-                        <img class="mt-3" src="{{ asset('images/rozmowa.svg') }}">
+                        <img alt="conversation" class="mt-3" src="{{ asset('images/rozmowa.svg') }}">
                         <p class="mt-3 font-weight-bold">{{ __("Ciekawostki astronomiczne, pogadanki i prezentacja zdjęć") }}</p>
                     </div>
                 </div>
