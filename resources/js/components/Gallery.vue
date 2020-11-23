@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h3 v-if="gallery" class="mt-3" :class="fancy ? 'bg-gradient w-50 p-1' : ''">
+        <h3 v-if="gallery" class="mt-3 col-md-6 col-sm-12" :class="fancy ? 'bg-gradient p-1' : ''">
             {{ gallery.title }}
             <span v-if="fancy" class="float-right mr-3">
                 {{ gallery.date }}
@@ -9,7 +9,7 @@
         <p v-if="gallery && gallery.description && fancy">{{ gallery.description }}</p>
         <VueSlickCarousel v-bind="settings" v-if="images.length !== 0">
             <div v-for="image in images" class="p-1">
-                <a :href="image.url" target="_blank">
+                <a :href="image.url" target="_blank" @click.prevent="show(image)">
                     <gradient :opacity="0.6" :inverse="true">
                         <img class="w-100" :src="image.thumb"/>
                         <button class="btn btn-sm btn-outline-danger remove" @click.prevent="remove(image)">
@@ -19,6 +19,14 @@
                 </a>
             </div>
         </VueSlickCarousel>
+        <div class="preview" @click="hide" v-if="showPreview">
+            <div class="image w-100 h-100 d-flex align-items-center justify-content-center">
+                <a href="#" class="btn btn-outline-secondary hide-preview" @click="hide">
+                    <i class="fa fa-times"></i>
+                </a>
+                <img :src="currentImage">
+            </div>
+        </div>
     </div>
 </template>
 
@@ -53,7 +61,9 @@ export default {
             index: 0,
             images: [],
             gallery: null,
-            settings: gallerySettings
+            settings: gallerySettings,
+            currentImage: null,
+            showPreview: false
         }
     },
 
@@ -65,7 +75,9 @@ export default {
                 this.description = data.data.gallery.description;
                 this.gallery = data.data.gallery;
                 this.images = data.data.images;
-            })
+            });
+
+        window.addEventListener('keyup', this.keyboardListener);
     },
 
     methods: {
@@ -85,6 +97,20 @@ export default {
                         return img.uuid !== image.uuid;
                     });
                 });
+        },
+
+        show(image) {
+            this.currentImage = image.url;
+            this.showPreview = true;
+        },
+
+        hide() {
+            this.showPreview = false;
+        },
+
+        keyboardListener(e) {
+            if (e.code === 'Escape')
+                this.hide();
         }
     }
 }
@@ -96,5 +122,31 @@ export default {
     top: 5px;
     right: 5px;
     z-index: 2000;
+}
+
+.preview {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 2000;
+    transition: 0.5s;
+    padding: 10px;
+
+    .image {
+        img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+    }
+
+    .hide-preview {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 2100;
+    }
 }
 </style>

@@ -2067,6 +2067,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -2095,7 +2103,9 @@ __webpack_require__.r(__webpack_exports__);
       index: 0,
       images: [],
       gallery: null,
-      settings: _constants__WEBPACK_IMPORTED_MODULE_2__["gallerySettings"]
+      settings: _constants__WEBPACK_IMPORTED_MODULE_2__["gallerySettings"],
+      currentImage: null,
+      showPreview: false
     };
   },
   mounted: function mounted() {
@@ -2108,6 +2118,7 @@ __webpack_require__.r(__webpack_exports__);
       _this.gallery = data.data.gallery;
       _this.images = data.data.images;
     });
+    window.addEventListener('keyup', this.keyboardListener);
   },
   methods: {
     showImg: function showImg(index) {
@@ -2125,6 +2136,16 @@ __webpack_require__.r(__webpack_exports__);
           return img.uuid !== image.uuid;
         });
       });
+    },
+    show: function show(image) {
+      this.currentImage = image.url;
+      this.showPreview = true;
+    },
+    hide: function hide() {
+      this.showPreview = false;
+    },
+    keyboardListener: function keyboardListener(e) {
+      if (e.code === 'Escape') this.hide();
     }
   }
 });
@@ -6737,7 +6758,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".remove[data-v-5761a7b7] {\n  position: absolute;\n  top: 5px;\n  right: 5px;\n  z-index: 2000;\n}", ""]);
+exports.push([module.i, ".remove[data-v-5761a7b7] {\n  position: absolute;\n  top: 5px;\n  right: 5px;\n  z-index: 2000;\n}\n.preview[data-v-5761a7b7] {\n  position: fixed;\n  left: 0;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  background-color: rgba(0, 0, 0, 0.6);\n  z-index: 2000;\n  transition: 0.5s;\n  padding: 10px;\n}\n.preview .image img[data-v-5761a7b7] {\n  max-width: 100%;\n  max-height: 100%;\n}\n.preview .hide-preview[data-v-5761a7b7] {\n  position: absolute;\n  top: 0;\n  right: 0;\n  z-index: 2100;\n}", ""]);
 
 // exports
 
@@ -38805,8 +38826,8 @@ var render = function() {
         ? _c(
             "h3",
             {
-              staticClass: "mt-3",
-              class: _vm.fancy ? "bg-gradient w-50 p-1" : ""
+              staticClass: "mt-3 col-md-6 col-sm-12",
+              class: _vm.fancy ? "bg-gradient p-1" : ""
             },
             [
               _vm._v("\n        " + _vm._s(_vm.gallery.title) + "\n        "),
@@ -38833,7 +38854,15 @@ var render = function() {
               return _c("div", { staticClass: "p-1" }, [
                 _c(
                   "a",
-                  { attrs: { href: image.url, target: "_blank" } },
+                  {
+                    attrs: { href: image.url, target: "_blank" },
+                    on: {
+                      click: function($event) {
+                        $event.preventDefault()
+                        return _vm.show(image)
+                      }
+                    }
+                  },
                   [
                     _c("gradient", { attrs: { opacity: 0.6, inverse: true } }, [
                       _c("img", {
@@ -38862,6 +38891,31 @@ var render = function() {
             }),
             0
           )
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.showPreview
+        ? _c("div", { staticClass: "preview", on: { click: _vm.hide } }, [
+            _c(
+              "div",
+              {
+                staticClass:
+                  "image w-100 h-100 d-flex align-items-center justify-content-center"
+              },
+              [
+                _c(
+                  "a",
+                  {
+                    staticClass: "btn btn-outline-secondary hide-preview",
+                    attrs: { href: "#" },
+                    on: { click: _vm.hide }
+                  },
+                  [_c("i", { staticClass: "fa fa-times" })]
+                ),
+                _vm._v(" "),
+                _c("img", { attrs: { src: _vm.currentImage } })
+              ]
+            )
+          ])
         : _vm._e()
     ],
     1
