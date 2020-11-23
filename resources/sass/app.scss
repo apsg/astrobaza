@@ -43,6 +43,10 @@ html, body {
     }
 }
 
+.hide {
+    display: none !important;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     background-color: $body-bg;
@@ -125,6 +129,6 @@ p {
     @include gradient;
 }
 
-.text-black{
+.text-black {
     color: #000000;
 }
